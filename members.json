@@ -1,0 +1,32 @@
+[
+    {
+        "firstName": "Emmanuel",
+        "lastName": "Kumi",
+        "dateOfBirth": "1990-01-01",
+        "gender": "Male",
+        "email": "emmanuelkumi@example.com",
+        "phone": "+233549978654",
+        "address": "Yayo Street",
+        "recordNumber": "34567"
+    },
+    {
+        "firstName": "Sarah",
+        "lastName": "Johnson",
+        "dateOfBirth": "1985-05-15",
+        "gender": "Female",
+        "email": "sarahjohnson@example.com",
+        "phone": "+233549978655",
+        "address": "Maputo Street",
+        "recordNumber": "34568"
+    },
+    {
+        "firstName": "Michael",
+        "lastName": "Smith",
+        "dateOfBirth": "1978-09-30",
+        "gender": "Male",
+        "email": "michaelsmith@example.com",
+        "phone": "+233549978656",
+        "address": "Accra Street",
+        "recordNumber": "34569"
+    }
+]
