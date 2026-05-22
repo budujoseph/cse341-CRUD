@@ -3,13 +3,31 @@ const app = express();
 require('dotenv').config();
 const routes = require('./routes/index');
 const mongodb = require('./db/db_config');
+const cors = require('cors');
+const bodyParser = require('body-parser');
+
 
 
 const PORT = process.env.PORT || 8080;
 const HOST = process.env.HOST || 'localhost';
 
 app.use(express.json());
+app.use(cors());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
 app.use('/', routes);
+
+//Error handling middleware
+app.use((err, req, res, next) => {
+  res.status(err.status || 500)
+  res.send({
+    error: {
+      status: err.status || 500,
+      message: err.message
+    }
+  })
+})
 
 mongodb.initdb(err => {
     if(err) {

@@ -1,0 +1,30 @@
+### Get all arts
+GET http://localhost:5000/arts
+
+### Get art by ID
+GET http://localhost:5000/arts/6a10bf389b1e7d73b6229ba7
+
+### Create a new art
+POST http://localhost:5000/arts
+Content-Type: application/json
+
+{
+    "title": "The Persistence of Memory",
+    "artist": "Salvador Dalí",
+    "year": 1931,
+    "description": "A surreal painting featuring melting clocks in a dreamlike landscape."
+}
+
+### Update an existing art
+PUT http://localhost:5000/arts/6a10d08ab8e30a1bdff6074c
+Content-Type: application/json
+
+{
+    "title": "The Persistence of Memory (Updated)",
+    "artist": "Salvador Dalí",
+    "year": 1931,
+    "description": "A surreal painting featuring melting clocks in a dreamlike landscape. Updated description."
+}
+
+### Delete an art
+DELETE http://localhost:5000/arts/6a10d08ab8e30a1bdff6074c

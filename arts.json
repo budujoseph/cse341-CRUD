@@ -1,0 +1,20 @@
+[
+    {
+        "title": "The Sunset",
+        "artist": "Emmanuel Ankomah",
+        "year": 2020,
+        "description": "A beautiful sunset over the ocean"
+    },
+    {
+        "title": "The Forest",
+        "artist": "Qwesi Morgan",
+        "year": 2021,
+        "description": "A serene forest with tall trees"
+    },
+    {
+        "title": "The Cityscape",
+        "artist": "Ernest Larbi",
+        "year": 2019,
+        "description": "A bustling city skyline at night"
+    }
+]

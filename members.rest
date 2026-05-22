@@ -1,0 +1,44 @@
+###Get all members
+GET http://localhost:5000/members
+
+### Get a member by ID
+GET http://localhost:5000/members/6a0f150b2f8f8fdba8412535
+
+### Create a new member
+POST http://localhost:5000/members HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "John",
+    "lastName": "Hammed",
+    "dateOfBirth": "1990-01-01",
+    "gender": "Male",
+    "email": "john.doe@example.com",
+    "phone": "123-456-7890",
+    "address": "Anum Street",
+    "recordNumber": "REC001"
+}
+### Update a member by ID
+PUT http://localhost:5000/members/6a0f150b2f8f8fdba8412535 HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "Morgan",
+    "lastName": "Qwesi",
+    "dateOfBirth": "1990-01-01",
+    "gender": "Male",
+    "email": "morgan.qwesi@example.com",
+    "phone": "098-765-4321",
+    "address": "Omega Junction",
+    "recordNumber": "REC002"
+}
+
+### Delete a member by ID
+DELETE http://localhost:5000/members/6a0f150b2f8f8fdba8412536
+
+
+
+
+
+
+

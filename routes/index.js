@@ -1,11 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const membersRouter = require('./members');
+const artsRouter = require('./arts');
 
-router.get('/', (req, res) => {
-  res.send('Hello, World!');
-});
+router.use('/members', membersRouter);
+router.use('/arts', artsRouter);
 
-router.use('/', membersRouter);
 
 module.exports = router;
