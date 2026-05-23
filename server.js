@@ -11,7 +11,6 @@ const swaggerUi = require('swagger-ui-express')
 
 
 const PORT = process.env.PORT || 8080;
-const HOST = process.env.HOST || 'localhost';
 
 app.use(express.json());
 app.use(cors());
@@ -25,7 +24,7 @@ mongodb.initdb(err => {
     if(err) {
         console.error(err);
     }
-    app.listen(PORT, HOST, () => {
-        console.log(`Connected to database and server is running on http://${HOST}:${PORT}`);
+    app.listen(PORT, () => {
+        console.log(`Connected to database and server is running on ${PORT}`);
     });
 }) 
