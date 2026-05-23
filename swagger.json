@@ -13,7 +13,7 @@
   "paths": {
     "/members/": {
       "get": {
-        "description": "",
+        "description": "Get all members",
         "produces": [
           "application/json"
         ],
@@ -24,7 +24,7 @@
         }
       },
       "post": {
-        "description": "",
+        "description": "Create new member",
         "parameters": [
           {
             "name": "body",
@@ -75,7 +75,7 @@
     },
     "/members/{id}": {
       "get": {
-        "description": "",
+        "description": "Get member by ID",
         "produces": [
           "application/json"
         ],
@@ -100,7 +100,7 @@
         }
       },
       "put": {
-        "description": "",
+        "description": "Update member information",
         "parameters": [
           {
             "name": "id",
@@ -152,7 +152,7 @@
         }
       },
       "delete": {
-        "description": "",
+        "description": "Delete member records",
         "parameters": [
           {
             "name": "id",
@@ -176,7 +176,7 @@
     },
     "/arts/": {
       "get": {
-        "description": "",
+        "description": "Get all arts",
         "produces": [
           "application/json"
         ],
@@ -187,7 +187,7 @@
         }
       },
       "post": {
-        "description": "",
+        "description": "Create new art",
         "parameters": [
           {
             "name": "body",
@@ -226,7 +226,7 @@
     },
     "/arts/{id}": {
       "get": {
-        "description": "",
+        "description": "Get art by ID",
         "produces": [
           "application/json"
         ],
@@ -251,7 +251,7 @@
         }
       },
       "put": {
-        "description": "",
+        "description": "Update art information ",
         "parameters": [
           {
             "name": "id",
@@ -294,7 +294,7 @@
         }
       },
       "delete": {
-        "description": "",
+        "description": "Delete art records",
         "parameters": [
           {
             "name": "id",
