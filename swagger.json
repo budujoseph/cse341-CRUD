@@ -5,10 +5,10 @@
     "description": "Sample APIs to manage members and arts collection",
     "version": "1.0.0"
   },
-  "host": "localhost:5000",
+  "host": "cse341-crud-besb.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/members/": {
