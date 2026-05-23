@@ -10,7 +10,10 @@ router.post('/',
     memberValidation.checkMemberInfo,
     membersController.createMember);
 
-router.put('/:id', membersController.updateMemberInfo)
+router.put('/:id', memberValidation.validateMemberRules(),
+    memberValidation.checkMemberInfo,
+    membersController.updateMemberInfo)
+    
 router.delete('/:id', membersController.deleteMember)
 
 

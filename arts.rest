@@ -11,10 +11,9 @@ Content-Type: application/json
 {
     "title": "The Persistence of Memory",
     "artist": "Salvador Dalí",
-    "year": 1931,
+    "year": 2012,
     "description": "A surreal painting featuring melting clocks in a dreamlike landscape."
 }
-
 ### Update an existing art
 PUT http://localhost:5000/arts/6a10d08ab8e30a1bdff6074c
 Content-Type: application/json
@@ -27,4 +26,4 @@ Content-Type: application/json
 }
 
 ### Delete an art
-DELETE http://localhost:5000/arts/6a10d08ab8e30a1bdff6074c
+DELETE http://localhost:5000/arts/6a10eabe3891ca7a3651696a

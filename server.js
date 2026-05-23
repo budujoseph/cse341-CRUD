@@ -5,6 +5,8 @@ const routes = require('./routes/index');
 const mongodb = require('./db/db_config');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const swaggerDoc = require('./swagger.json')
+const swaggerUi = require('swagger-ui-express')
 
 
 
@@ -17,17 +19,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/', routes);
-
-//Error handling middleware
-app.use((err, req, res, next) => {
-  res.status(err.status || 500)
-  res.send({
-    error: {
-      status: err.status || 500,
-      message: err.message
-    }
-  })
-})
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDoc));
 
 mongodb.initdb(err => {
     if(err) {
