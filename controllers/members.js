@@ -1,13 +1,15 @@
 const mongodb = require('../db/db_config');
 const ObjectId = require('mongodb').ObjectId;
 
-const getMembers = async (req, res) => {
-    {
+const getMembers = async (req, res, next) => {
+    try {
         const result = await mongodb.getdb().db().collection('members').find();
         result.toArray().then(members => {
             res.setHeader('Content-Type', 'application/json');
             res.status(200).json(members);
         });
+    } catch (error) {
+        next(error)
     }
 }
 
@@ -30,8 +32,9 @@ const getMembersById = async (req, res, next) => {
     }
 }
 
-const createMember = async (req, res) => {
-    const member = {
+const createMember = async (req, res, next) => {
+    try {
+        const member = {
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         dateOfBirth: req.body.dateOfBirth,
@@ -41,11 +44,14 @@ const createMember = async (req, res) => {
         address: req.body.address,
         recordNumber: req.body.recordNumber
     };
-    const response = await mongodb.getdb().db().collection('members').insertOne(member);
-    if (response.acknowledged) {
+        const response = await mongodb.getdb().db().collection('members').insertOne(member);
+        if (response.acknowledged) {
         res.status(201).json(response);
-    } else {
-        res.status(500).json({ error: 'Failed to create member' });
+        } else {
+            res.status(500).json({ error: 'Failed to create member' });
+        }
+    } catch (error) {
+        next(error)
     }
    }
 

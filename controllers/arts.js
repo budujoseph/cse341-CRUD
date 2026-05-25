@@ -1,12 +1,18 @@
 const mongodb = require('../db/db_config');
 const ObjectId = require('mongodb').ObjectId;
 
-const getAllArts = async (req, res) => {
-    const result = await mongodb.getdb().db().collection('arts').find();
-    result.toArray().then(arts => {
-        res.setHeader('Content-Type', 'application/json');
-        res.status(200).json(arts);
-    });
+const getAllArts = async (req, res, next) => {
+    try {
+        const result = await mongodb.getdb().db().collection('arts').find();
+        result.toArray().then(arts => {
+            res.setHeader('Content-Type', 'application/json');
+            res.status(200).json(arts);
+        });
+    } catch (error) { 
+        next(error);
+    }
+
+
 }
 
 const getArtById = async (req, res, next) => {
