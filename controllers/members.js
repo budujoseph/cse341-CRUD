@@ -107,7 +107,6 @@ module.exports = {
     getMembers,
     getMembersById,
     createMember,
-    getMembersById,
     updateMemberInfo,
     deleteMember
 };

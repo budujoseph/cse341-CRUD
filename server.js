@@ -7,6 +7,9 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const swaggerDoc = require('./swagger.json')
 const swaggerUi = require('swagger-ui-express')
+const session = require('express-session')
+const passport = require('passport')
+require('./db/passport_config')
 
 
 
@@ -16,6 +19,14 @@ app.use(express.json());
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false
+}))
+app.use(passport.initialize());
+app.use(passport.session())
 
 app.use('/', routes);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDoc));
